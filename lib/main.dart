@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:surf_flutter_summer_school_24/router/app_router.dart';
+import 'package:surf_flutter_summer_school_24/router/route_names.dart';
 import 'package:surf_flutter_summer_school_24/screens/slider_screen/slider_screen.dart';
 
 void main() {
@@ -11,7 +13,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SliderScreen()
+      onGenerateRoute: AppRouter.generatedRoute,
+      initialRoute: RouteNames.galleryScreen,
     );
   }
 }
