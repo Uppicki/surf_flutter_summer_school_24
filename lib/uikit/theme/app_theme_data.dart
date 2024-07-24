@@ -29,6 +29,17 @@ abstract class AppThemeData {
         color: _lightColorScheme.onPrimary,
       ),
     ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(16.0),
+        ),
+      ),
+      constraints: BoxConstraints(
+        maxHeight: 300,
+        minWidth: double.infinity// Максимальная высота
+      ),
+    ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: _lightColorScheme.background,
       selectedItemColor: _lightColorScheme.primary,
@@ -40,6 +51,11 @@ abstract class AppThemeData {
         color: _lightColorScheme.onPrimary,
       ),
     ),
+    listTileTheme: ListTileThemeData(
+      leadingAndTrailingTextStyle: TextStyle(
+        color: _lightColorScheme.onSecondary
+      )
+    )
   );
 
   static final darkTheme = ThemeData(

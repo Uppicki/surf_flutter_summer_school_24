@@ -4,7 +4,18 @@ import 'package:surf_flutter_summer_school_24/router/route_names.dart';
 import 'package:surf_flutter_summer_school_24/screens/slider_screen/slider_screen.dart';
 import 'package:surf_flutter_summer_school_24/uikit/theme/app_theme_data.dart';
 
-void main() {
+void main() async {
+
+
+
+
+
+
+
+
+
+
+
   runApp(const MainApp());
 }
 

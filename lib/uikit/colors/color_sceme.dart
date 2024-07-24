@@ -36,14 +36,14 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
 
 
   AppColorScheme.light()
-      : primary = LightColorPalette.purple,
-        onPrimary = LightColorPalette.white,
+      : primary = LightColorPalette.white,
+        onPrimary = LightColorPalette.black,
         secondary = LightColorPalette.greenYellow,
-        onSecondary = LightColorPalette.chineseBlack,
+        onSecondary = LightColorPalette.lightGray,
         surface = LightColorPalette.white,
         surfaceSecondary = LightColorPalette.cultured,
-        onSurface = LightColorPalette.chineseBlack,
-        background = LightColorPalette.cultured,
+        onSurface = LightColorPalette.darkGray,
+        background = LightColorPalette.white,
         backgroundSecondary = LightColorPalette.darkScarlet,
         backgroundTertiary = LightColorPalette.cultured,
         onBackground = LightColorPalette.chineseBlack,

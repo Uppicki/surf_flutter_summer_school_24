@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 abstract class LightColorPalette {
+  static const lightGray = Color(0xFFAAAAAA);
+  static const darkGray = Color(0xFF444444);
+
   static const purple = Color(0xFF9824F2);
 
   static const greenYellow = Color(0xFFBEFF3D);
