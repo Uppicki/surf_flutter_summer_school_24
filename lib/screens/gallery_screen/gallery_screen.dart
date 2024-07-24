@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surf_flutter_summer_school_24/theme_service/di/theme_inherited.dart';
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
@@ -44,7 +45,9 @@ class GalleryScreen extends StatelessWidget {
                 leading: Image.asset('assets/png/theme.png'),
                   title: Text('Тема'),
                   trailing: Text('Светлая'),
-                  onTap: null
+                  onTap: () {
+                    ThemeInherited.of(context).switchThemeMode();
+                  }
               ),
               ListTile(
                 leading: Image.asset('assets/png/upload.png'),

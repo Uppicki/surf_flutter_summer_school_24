@@ -74,9 +74,21 @@ abstract class AppThemeData {
     ),
     scaffoldBackgroundColor: _darkColorScheme.background,
     appBarTheme: AppBarTheme(
-      color: _lightColorScheme.primary,
+      centerTitle: true,
+      color: _darkColorScheme.primary,
       iconTheme: IconThemeData(
-        color: _lightColorScheme.onPrimary,
+        color: _darkColorScheme.onPrimary,
+      ),
+    ),
+    bottomSheetTheme: const BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(16.0),
+        ),
+      ),
+      constraints: BoxConstraints(
+          maxHeight: 300,
+          minWidth: double.infinity// Максимальная высота
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -90,6 +102,11 @@ abstract class AppThemeData {
         color: _darkColorScheme.onPrimary,
       ),
     ),
+      listTileTheme: ListTileThemeData(
+          leadingAndTrailingTextStyle: TextStyle(
+              color: _darkColorScheme.onSecondary
+          )
+      )
   );
 
   static final _lightColorScheme = AppColorScheme.light();

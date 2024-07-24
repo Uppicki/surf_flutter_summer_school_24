@@ -65,4 +65,8 @@ abstract class DarkColorPalette {
   static const white = Colors.white;
 
   static const black = Colors.black;
+
+  static const darkGray = Color(0xFF999999);
+
+  static const lightGray = Color(0xFFAAAAAA);
 }

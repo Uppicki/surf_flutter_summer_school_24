@@ -66,10 +66,10 @@ class AppColorScheme extends ThemeExtension<AppColorScheme> {
         shimmer = LightColorPalette.platinum;
 
   AppColorScheme.dark()
-      : primary = DarkColorPalette.hanPurple,
+      : primary = DarkColorPalette.raisinBlack,
         onPrimary = DarkColorPalette.white,
         secondary = DarkColorPalette.inchworm,
-        onSecondary = DarkColorPalette.black,
+        onSecondary = DarkColorPalette.lightGray,
         surface = DarkColorPalette.raisinBlack,
         surfaceSecondary = DarkColorPalette.raisinBlack,
         onSurface = DarkColorPalette.white,
