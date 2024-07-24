@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surf_flutter_summer_school_24/featers/gallery/elementary_gallery_screen.dart';
 import 'package:surf_flutter_summer_school_24/theme_service/di/theme_inherited.dart';
 
 class GalleryScreen extends StatelessWidget {
@@ -18,17 +19,8 @@ class GalleryScreen extends StatelessWidget {
           const SizedBox(width: 10)
         ],
       ),
-      body: GridView.builder(
-          padding: const EdgeInsets.all(8),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 2,
-            mainAxisSpacing: 4,
-          ),
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: 20,
-          itemBuilder: (_, __) => const ColoredBox(color: Colors.yellow)),
-    );
+      body: ElementaryGalleryScreen()
+      );
   }
 
   void _showModalBottomSheet(BuildContext context) {
