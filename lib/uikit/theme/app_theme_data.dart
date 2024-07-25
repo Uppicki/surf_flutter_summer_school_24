@@ -55,7 +55,8 @@ abstract class AppThemeData {
       leadingAndTrailingTextStyle: TextStyle(
         color: _lightColorScheme.onSecondary
       )
-    )
+    ),
+    
   );
 
   static final darkTheme = ThemeData(
@@ -106,7 +107,10 @@ abstract class AppThemeData {
           leadingAndTrailingTextStyle: TextStyle(
               color: _darkColorScheme.onSecondary
           )
-      )
+      ),
+      dialogTheme: DialogTheme(
+      titleTextStyle: TextStyle(color: _darkColorScheme.onPrimary)
+    )
   );
 
   static final _lightColorScheme = AppColorScheme.light();

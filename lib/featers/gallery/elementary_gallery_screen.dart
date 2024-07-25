@@ -9,6 +9,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/featers/gallery/gallery_wm.dart';
 import 'package:surf_flutter_summer_school_24/model/photo/photo_model.dart';
+import 'package:surf_flutter_summer_school_24/uikit/widgets/grid_builder.dart';
 
 class ElementaryGalleryScreen extends ElementaryWidget<GalleryWM> {
   const ElementaryGalleryScreen({Key? key}) :
@@ -28,33 +29,13 @@ class ElementaryGalleryScreen extends ElementaryWidget<GalleryWM> {
           builder: (_, value, __) {
             if (value.isEmpty) {
               wm.loadPhotos();
-              return GridView.builder(
-                  padding: const EdgeInsets.all(8),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: 2,
-                    mainAxisSpacing: 4,
-                  ),
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 20,
-                  itemBuilder: (_, __) => const ColoredBox(color: Colors.yellow));
-            
+              return MyGridBuilder(itemCount: count);
             }
             
-             
-
-
-
-            return GridView.builder(
-                padding: const EdgeInsets.all(8),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 2,
-                  mainAxisSpacing: 4,
-                ),
-                itemCount: value.length,
-                itemBuilder: (_, index) => Image.network(value[index].imageUrl, fit: BoxFit.cover)
-                );
+            return MyGridBuilder(
+              itemCount: value.length,
+              items: value,
+              );
           }            
         );
       }

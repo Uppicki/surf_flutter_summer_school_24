@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/featers/gallery/elementary_gallery_screen.dart';
+import 'package:surf_flutter_summer_school_24/featers/upload_files/elementary_upload_files_gallery.dart';
 import 'package:surf_flutter_summer_school_24/theme_service/di/theme_inherited.dart';
 
 class GalleryScreen extends StatelessWidget {
@@ -44,6 +45,13 @@ class GalleryScreen extends StatelessWidget {
               ListTile(
                 leading: Image.asset('assets/png/upload.png'),
                 title: Text('Загрузить фото...'),
+                onTap: () {
+                  showDialog(
+                    context: context, 
+                    builder: (_) =>
+                    ElementaryUploadFilesGallery()
+                  );
+                }
               ),
             ],
           ),

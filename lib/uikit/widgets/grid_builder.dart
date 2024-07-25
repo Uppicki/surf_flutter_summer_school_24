@@ -13,19 +13,39 @@ class MyGridBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(8),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 2,
-        mainAxisSpacing: 4,
-      ),
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: items?.length ?? itemCount,
-      itemBuilder: (_, __) => 
-        const ColoredBox(color: Colors.yellow)
-        
-    );
+
+
+    if (items == null) {
+      return GridView.builder(
+        padding: const EdgeInsets.all(8),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 2,
+          mainAxisSpacing: 4,
+        ),
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: items?.length ?? itemCount,
+        itemBuilder: (_, __) => 
+          const ColoredBox(color: Colors.yellow)
+          
+      );
+
+    } else {
+      return GridView.builder(
+        padding: const EdgeInsets.all(8),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 2,
+          mainAxisSpacing: 4,
+        ),
+        itemCount: items?.length ?? itemCount,
+        itemBuilder: (_, index) => 
+          Image.network(items![index].imageUrl, fit: BoxFit.cover)
+          
+      );
+    }
+
+    
 
   }
 }
