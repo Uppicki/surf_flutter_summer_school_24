@@ -4,11 +4,12 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:surf_flutter_summer_school_24/uikit/colors/color_sceme.dart';
+import 'package:surf_flutter_summer_school_24/uikit/colors/color_scheme.dart';
+import 'package:surf_flutter_summer_school_24/uikit/icons/icons_scheme.dart';
 
 abstract class AppThemeData {
   static final lightTheme = ThemeData(
-    extensions: [_lightColorScheme],
+    extensions: [_lightColorScheme, _lightIconScheme],
     brightness: Brightness.light,
     colorScheme: ColorScheme(
       brightness: Brightness.light,
@@ -60,7 +61,7 @@ abstract class AppThemeData {
   );
 
   static final darkTheme = ThemeData(
-    extensions: [_darkColorScheme],
+    extensions: [_darkColorScheme, _darkIconScheme],
     brightness: Brightness.dark,
     colorScheme: ColorScheme(
       brightness: Brightness.dark,
@@ -115,4 +116,6 @@ abstract class AppThemeData {
 
   static final _lightColorScheme = AppColorScheme.light();
   static final _darkColorScheme = AppColorScheme.dark();
+  static final _lightIconScheme = IconsScheme.light();
+  static final _darkIconScheme = IconsScheme.dark();
 }

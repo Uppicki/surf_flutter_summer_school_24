@@ -6,8 +6,8 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:surf_flutter_summer_school_24/featers/upload_files/elementary_upload_files_gallery.dart';
-import 'package:surf_flutter_summer_school_24/featers/upload_files/upload_files_model.dart';
+import 'package:surf_flutter_summer_school_24/features/upload_files/elementary_upload_files_gallery.dart';
+import 'package:surf_flutter_summer_school_24/features/upload_files/upload_files_model.dart';
 
 class UploadFilesWM extends WidgetModel
 <ElementaryUploadFilesGallery, UploadFilesModel> {

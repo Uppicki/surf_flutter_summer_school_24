@@ -30,3 +30,5 @@ flutter:
 
   assets:
     - assets/png/
+    - assets/light/png/
+    - assets/dark/png/

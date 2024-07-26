@@ -1,10 +1,12 @@
 
 
 
+
+
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:surf_flutter_summer_school_24/repository/photo_repository/mock_photo_repository.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/mock_photo_repository.dart';
 
 class UploadFilesModel extends ElementaryModel {
   final MockPhotoRepository _repository = MockPhotoRepository();

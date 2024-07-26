@@ -6,10 +6,12 @@
 
 
 
+
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/model/photo/photo_model.dart';
-import 'package:surf_flutter_summer_school_24/repository/photo_repository/i_photo_repository.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/i_photo_repository.dart';
+import 'package:surf_flutter_summer_school_24/uikit/icons/icons_scheme.dart';
 
 class GalleryModel extends ElementaryModel{
   final ValueNotifier<List<PhotoModel>> photos = ValueNotifier([]);

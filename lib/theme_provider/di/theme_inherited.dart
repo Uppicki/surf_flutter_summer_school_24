@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:surf_flutter_summer_school_24/theme_service/controller/theme_controller.dart';
+import 'package:surf_flutter_summer_school_24/theme_provider/controller/theme_controller.dart';
 
 class ThemeInherited extends InheritedWidget {
   final ThemeController themeController;

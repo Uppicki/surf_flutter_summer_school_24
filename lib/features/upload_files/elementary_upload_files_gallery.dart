@@ -7,7 +7,7 @@ import 'dart:io';
 
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:surf_flutter_summer_school_24/featers/upload_files/upload_files_wm.dart';
+import 'package:surf_flutter_summer_school_24/features/upload_files/upload_files_wm.dart';
 
 class ElementaryUploadFilesGallery 
   extends ElementaryWidget<UploadFilesWM>

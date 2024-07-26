@@ -15,20 +15,12 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
 ];
 
-final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-  child: Container(
-    margin: EdgeInsets.all(5.0),
-    child: ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-        child: Image.network(item, fit: BoxFit.cover)),
-  ),
-))
-    .toList();
+final imageSliders = imgList.map((img) => Image.network(img, fit: BoxFit.cover, height: 20)).toList();
 
 class SliderScreen extends StatefulWidget {
+  final int startIndex;
 
-  SliderScreen({super.key});
+  SliderScreen({super.key, required this.startIndex});
 
   @override
   State<SliderScreen> createState() => _SliderScreenState();
@@ -36,6 +28,8 @@ class SliderScreen extends StatefulWidget {
 
 class _SliderScreenState extends State<SliderScreen> {
   int _currentPage = 0;
+
+
 
   @override
   Widget build(BuildContext context) {
