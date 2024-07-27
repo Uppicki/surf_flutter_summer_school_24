@@ -2,9 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:surf_flutter_summer_school_24/api_client/api_client.dart';
+import 'package:surf_flutter_summer_school_24/init_dio.dart';
 import 'package:surf_flutter_summer_school_24/repository_provider/di/repositories_inherited.dart';
 import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/i_photo_repository.dart';
 import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/mock_photo_repository.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/photo_repository.dart';
 import 'package:surf_flutter_summer_school_24/repository_provider/repository/repository.dart';
 import 'package:surf_flutter_summer_school_24/router/app_router.dart';
 import 'package:surf_flutter_summer_school_24/router/route_names.dart';
@@ -19,11 +22,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
 
+  final dio = initDio();
+
+  final apiClient = ApiClient(dio);
+
   final themeStorage = ThemeStorage(preferences: prefs);
   final themeRepository = ThemeRepository(themeStorage: themeStorage);
   final themeController = ThemeController(themeRepository: themeRepository);
 
-  final IGlobalPhotoRepository photoRepository = MockPhotoRepository();
+  final PhotoRepository photoRepository = PhotoRepository(apiClient: apiClient);
 
   final repository = Repository(photoRepository: photoRepository);
   

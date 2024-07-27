@@ -9,7 +9,6 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/features/gallery/gallery_wm.dart';
 import 'package:surf_flutter_summer_school_24/model/photo/photo_model.dart';
-import 'package:surf_flutter_summer_school_24/uikit/icons/icons_scheme.dart';
 import 'package:surf_flutter_summer_school_24/uikit/widgets/grid_builder.dart';
 
 class ElementaryGalleryScreen extends ElementaryWidget<GalleryWM> {

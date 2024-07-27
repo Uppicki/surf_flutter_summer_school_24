@@ -12,5 +12,9 @@ abstract interface class ISinglePhotoRepository {
   Future<PhotoModel> getPhotoByIndexInRepository(int index);
 }
 
+abstract interface class IUploadPhotoRepository {
+  Future<PhotoModel> getPhotoByIndexInRepository(int index);
+}
+
 abstract interface class IGlobalPhotoRepository
 implements IPhotoListRepository, ISinglePhotoRepository {}
