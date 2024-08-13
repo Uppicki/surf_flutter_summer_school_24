@@ -4,11 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:surf_flutter_summer_school_24/api_client/api_client.dart';
 import 'package:surf_flutter_summer_school_24/init_dio.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/di/repositories_inherited.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/i_photo_repository.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/mock_photo_repository.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/repository/photo_repository/photo_repository.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/repository/repository.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/gallery_photo_repository/di/repository_inherited.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/gallery_photo_repository/repository/gallery_repository.dart';
 import 'package:surf_flutter_summer_school_24/router/app_router.dart';
 import 'package:surf_flutter_summer_school_24/router/route_names.dart';
 import 'package:surf_flutter_summer_school_24/storage/theme/theme_storage.dart';
@@ -30,21 +27,19 @@ void main() async {
   final themeRepository = ThemeRepository(themeStorage: themeStorage);
   final themeController = ThemeController(themeRepository: themeRepository);
 
-  final PhotoRepository photoRepository = PhotoRepository(apiClient: apiClient);
-
-  final repository = Repository(photoRepository: photoRepository);
+  final galleryRepository = GalleryRepository(client: apiClient);
   
   
   runApp(
       MainApp(
         themeController: themeController,
-        repository: repository,)
+        repository: galleryRepository,)
   );
 }
 
 class MainApp extends StatelessWidget {
   final ThemeController themeController;
-  final Repository repository;
+  final GalleryRepository repository;
 
   const MainApp({super.key, required this.themeController, required this.repository});
 

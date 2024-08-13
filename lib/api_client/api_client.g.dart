@@ -19,20 +19,20 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<GetHrefResponse> getHref({required String path}) async {
+  Future<PhotoListResponse> getPhotos({String mediaType = 'image'}) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'path': path};
+    final queryParameters = <String, dynamic>{r'media_type': mediaType};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<GetHrefResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<PhotoListResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              '/v1/disk/resources/upload',
+              '/v1/disk/resources/last-uploaded',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -41,7 +41,7 @@ class _ApiClient implements ApiClient {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = GetHrefResponse.fromJson(_result.data!);
+    final _value = PhotoListResponse.fromJson(_result.data!);
     return _value;
   }
 

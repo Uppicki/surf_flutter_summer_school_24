@@ -10,9 +10,7 @@ class GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElementaryGalleryScreen();
-
-
+    return const ElementaryGalleryScreen();
   }
 
 }

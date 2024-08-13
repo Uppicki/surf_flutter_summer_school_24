@@ -1,7 +1,7 @@
 
 
 
-
+/*
 
 import 'dart:io';
 
@@ -26,10 +26,7 @@ class UploadFilesModel extends ElementaryModel {
     final photo = photos.value.first;
     final href = await _photoRepository.getHrefUpload(photo.name);
 
-    await _photoRepository.uploadPhoto(
-        url: href,
-        file: File(photo.path)
-    );
+
   }
 
 
@@ -42,4 +39,4 @@ class UploadFilesModel extends ElementaryModel {
   }
 
 
-}
+}*/

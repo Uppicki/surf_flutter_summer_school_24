@@ -25,14 +25,15 @@ Dio initDio() {
 
   dio.interceptors.add(InterceptorsWrapper(
     onRequest: (options, handler) {
-      options.headers['Authorization'] = 'OAuth ${ApiSecureKeys.key}';
+      print('Request: ${options.method} ${options.uri}');
+      options.headers['Authorization'] = 'OAuth ${ApiSecureKeys.KEY}';
+      handler.next(options);
     }
   ));
 
 
   dio.interceptors.add(LogInterceptor(requestBody: true,
-      responseBody: true)); // Можно указать true, чтобы видеть и тело ответа
-
+      responseBody: true));
 
 
   return dio;

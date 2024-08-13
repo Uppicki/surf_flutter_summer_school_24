@@ -1,7 +1,7 @@
 
 
 
-
+/*
 import 'package:elementary/elementary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -41,4 +41,4 @@ class UploadFilesWM extends WidgetModel
 UploadFilesWM createUploadFilesWM(BuildContext context) =>
   UploadFilesWM(UploadFilesModel(
       photoRepository: RepositoriesInherited.of(context).photoRepository
-  ));
+  ));*/

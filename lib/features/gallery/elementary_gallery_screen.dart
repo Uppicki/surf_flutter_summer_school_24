@@ -7,6 +7,7 @@
 
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
+import 'package:surf_flutter_summer_school_24/features/gallery/gallery_screen_state/gallery_screen_state.dart';
 import 'package:surf_flutter_summer_school_24/features/gallery/gallery_wm.dart';
 import 'package:surf_flutter_summer_school_24/model/photo/photo_model.dart';
 import 'package:surf_flutter_summer_school_24/uikit/widgets/grid_builder.dart';
@@ -30,28 +31,18 @@ class ElementaryGalleryScreen extends ElementaryWidget<GalleryWM> {
             const SizedBox(width: 10)
           ],
         ),
-        body: ValueListenableBuilder<int>(
-            valueListenable: wm.countPhotos,
-            builder: (_, count,__) {
-              if (count == -1) {
-                wm.loadCountPhotos();
-                return CircularProgressIndicator();
-              }
-              return ValueListenableBuilder<List<PhotoModel>>(
-                  valueListenable: wm.photos,
-                  builder: (_, value, __) {
-                    if (value.isEmpty) {
+        body: ValueListenableBuilder<GalleryScreenState>(
+            valueListenable: wm.photos,
+            builder: (_, photos, __) =>
+                photos.map(
+                    initial: (_) {
                       wm.loadPhotos();
-                      return MyGridBuilder(itemCount: count);
-                    }
-
-                    return MyGridBuilder(
-                      itemCount: value.length,
-                      items: value,
-                    );
-                  }
-              );
-            }
+                      return Center(child: Text("Init state"));
+                    },
+                    empty: (_) => Center(child: Text("Empty")), 
+                    loading: (_) => Center(child: Text("Идёт загрузка")),
+                    loaded: (state) => MyGridBuilder(itemCount: state.photos.length, items: state.photos,)
+                )
         )
     );
 

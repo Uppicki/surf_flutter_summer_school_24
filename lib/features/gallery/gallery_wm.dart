@@ -3,16 +3,17 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:surf_flutter_summer_school_24/features/gallery/elementary_gallery_screen.dart';
 import 'package:surf_flutter_summer_school_24/features/gallery/gallery_model.dart';
+import 'package:surf_flutter_summer_school_24/features/gallery/gallery_screen_state/gallery_screen_state.dart';
 import 'package:surf_flutter_summer_school_24/features/upload_files/elementary_upload_files_gallery.dart';
 import 'package:surf_flutter_summer_school_24/model/photo/photo_model.dart';
-import 'package:surf_flutter_summer_school_24/repository_provider/di/repositories_inherited.dart';
+import 'package:surf_flutter_summer_school_24/repository_provider/gallery_photo_repository/di/repository_inherited.dart';
 import 'package:surf_flutter_summer_school_24/theme_provider/di/theme_inherited.dart';
 import 'package:surf_flutter_summer_school_24/uikit/icons/icons_scheme.dart';
 
 class GalleryWM extends WidgetModel<ElementaryGalleryScreen, GalleryModel> {
-  ValueListenable<int> get countPhotos => model.countPhotos;
 
-  ValueListenable<List<PhotoModel>> get photos => model.photos;
+
+  ValueListenable<GalleryScreenState> get photos => model.photos;
 
   GalleryWM(GalleryModel model) : super(model);
 
@@ -38,11 +39,12 @@ class GalleryWM extends WidgetModel<ElementaryGalleryScreen, GalleryModel> {
               ListTile(
                   leading: Image.asset(IconsScheme.of(context).uploadIcon),
                   title: Text('Загрузить фото...'),
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (_) => ElementaryUploadFilesGallery());
-                  }),
+                  onTap: null,)
+                  // onTap: () {
+                  //   showDialog(
+                  //       context: context,
+                  //       builder: (_) => ElementaryUploadFilesGallery());
+                  // }),
             ],
           ),
         );
@@ -50,9 +52,6 @@ class GalleryWM extends WidgetModel<ElementaryGalleryScreen, GalleryModel> {
     );
   }
 
-  void loadCountPhotos() {
-    model.getCountPhotos();
-  }
 
   void loadPhotos() {
     model.getPhotos();
@@ -64,4 +63,4 @@ class GalleryWM extends WidgetModel<ElementaryGalleryScreen, GalleryModel> {
 }
 
 GalleryWM createGalleryWM(BuildContext context) => GalleryWM(GalleryModel(
-    photoRepository: RepositoriesInherited.of(context).photoRepository));
+    photoRepository: RepositoriesInherited.of(context)));
